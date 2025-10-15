@@ -1,11 +1,11 @@
 :root {
     /* Roses uniquement */
-    --pink: #a3c4a8;
+    --pink: #c4a3b3;
     --Rosepoudré: #f6f2eb;
-    --Rosedragée: #d9e4d1;
-    --Roseframboise: #6d9773;
-    --Rosefuchsia: #3a5a40;
-    
+    --Rosedragée:  rgba(236, 191, 200, 0.758); 
+    --Roseframboise: rgba(164, 92, 106, 0.86);
+    --Rosefuchsia:#e6eee0;
+  
     
         --rose-light: #FDE2E4;
         --rose: #f9c5d1;
@@ -26,13 +26,12 @@
     --h5-size: 1.1rem;
     --h6-size: 1rem;
   }
-  :root {
+  /* :root {
     --pink: #a3c4a8;
     --Rosepoudré: #f6f2eb;
     --Rosedragée: #d9e4d1;
-    --Roseframboise: #6d9773;
     --Rosefuchsia: #3a5a40;
-  }
+  } */
   
   html {
     scroll-behavior: smooth;
@@ -67,40 +66,61 @@
     outline: 2px solid var(--pink);
   }
   
-  /* Centrer contenu */
-  .container {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
-    min-height: 90vh;
-    background: url(images/home-bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-top: 2px solid var(--Roseframboise);
-    
-  }
-  
+/* Container principal avec image de fond */
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  min-height: 80vh;
+  background: url('images/home-bg.jpg') no-repeat center center / cover;
+  border-top: 2px solid var(--Roseframboise);
+}
+
+/* Carré flou rosé */
+.blure::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.blure {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 192, 203, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+  text-align: center;
+  color: #444;
+  z-index: 4;
+}
+
   .container span {
     color: var(--Rosefuchsia);
   }
   
   .container p {
+    color: white;
     margin-top: 20px;
   }
   
   .container h2,
   .container h1,
   .container p {
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 15px 25px;
+   
+    padding: 20px 60px;
     border-radius: 10px;
     max-width: 800px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
   }
   
   .container h2 {
@@ -113,7 +133,7 @@
   }
 
  
-
+  
 
   /* container 2 */
   .container2 {
@@ -355,7 +375,7 @@
   
   .card-cmd {
     display: inline-block;
-    background-color: var(--Rosefuchsia);
+    background-color: rgba(236, 163, 178, 0.758);
     color: #fff;
     padding: 12px 30px;
     border-radius: 10px;
@@ -366,7 +386,7 @@
   }
   
   .card-cmd:hover {
-    background-color: var(--Roseframboise);
+    background-color:  rgba(186, 107, 122, 0.758);
     transform: translateY(-3px);
   }
   
@@ -770,7 +790,7 @@
  
   .site-footer {
     background-color: var(--Rosedragée);
-    color: var(--Rosefuchsia);
+    color: var(--rose-deep);
     text-align: center;
     padding: 30px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1027,73 +1047,81 @@
   }
   /* ---------------------------------------------------------------------------------------------------- */
   /* === MODAL STYLE === */
+/* Style général du popup */
 .modal {
-  display: none;
+  display: none; /* caché par défaut */
   position: fixed;
-  z-index: 9999;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* fond semi-transparent */
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(4px);
 }
 
+/* Contenu du popup */
 .modal-content {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 15px;
+  background-color: #fff;
+  margin: auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   text-align: center;
-  width: 90%;
   max-width: 400px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.3s ease;
-  position: relative;
+  animation: fadeIn 0.3s ease;
 }
 
-.modal-content h2 {
-  margin-bottom: 25px;
-  font-size: 22px;
-  color: #333;
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Buttons inside popup */
+/* Titre du popup */
+#popup-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--rose-deep);
+}
+
+/* Zone des boutons */
 .modal-buttons {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.modal-buttons .btn {
-  padding: 12px 20px;
-  border-radius: 8px;
+/* Boutons généraux */
+.btn {
+  padding: 10px 20px;
   border: none;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-.modal-buttons .btn:hover {
-  background-color: #388E3C;
-}
-
-/* Close Button */
-.modal .btn-close {
-  background-color: #bbb;
+  border-radius: 8px;
+  background-color: var(--blush);
   color: white;
-  font-weight: bold;
-  padding: 10px 18px;
-  border-radius: 6px;
-  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.modal .btn-close:hover {
-  background-color: #999;
+/* Hover sur boutons */
+.btn:hover {
+  background-color: var(--blush);
 }
+
+/* Bouton fermer */
+.btn-close {
+  margin-top: 10px;
+  background-color: var(--rose-dark);
+}
+
+.btn-close:hover {
+  background-color: var(--rose-dark);
+}
+
 
 @keyframes slideIn {
   from {

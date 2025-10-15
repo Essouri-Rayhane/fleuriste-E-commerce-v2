@@ -55,7 +55,14 @@ if (isset($_GET['delete'])) {
     /* ========== RESET ========== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise)); background-size: 400% 400%; animation: gradientFlow 10s ease infinite; min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
+    body { font-family: 'Segoe UI', sans-serif;  
+      background-image: url('../../images/font.jpg') ;
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
+
+   background-size: 400% 400%; 
+   min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
 
   
     .main-content h1 { margin-bottom: 20px; }
@@ -123,18 +130,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise));
-  background-size: 400% 400%;
-  animation: gradientFlow 10s ease infinite;
-  min-height: 100vh;
-  overflow-x: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
+
 
 /* ========== ANIMATIONS ========== */
 @keyframes gradientFlow {
@@ -391,7 +387,7 @@ button:hover {
         
         <li><a href="commandes.php"><i class="fa fa-shopping-cart"></i> Commandes</a></li>
         <li><a href="expeditions.php"><i class="fa fa-truck"></i> Expéditions</a></li>
-        <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li>
+        <!-- <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li> -->
         <li><a href="../../logout.php"><i class="fa fa-sign-out-alt"></i> Déconnexion</a></li>
       </ul>
     </div>
@@ -423,7 +419,7 @@ button:hover {
             <td><?= number_format($commande['totale'], 2, ',', ' '); ?></td>
             <td><?= ucfirst($commande['statut']); ?></td>
             <td class="action-buttons">
-              <a href="modifier_commande.php?id=<?= $commande['id_commande']; ?>"><i class="fa fa-edit"></i></a>
+
               <a href="?delete=<?= $commande['id_commande']; ?>" onclick="return confirm('Supprimer cette commande ?')"><i class="fa fa-trash-alt"></i></a>
             </td>
           </tr>

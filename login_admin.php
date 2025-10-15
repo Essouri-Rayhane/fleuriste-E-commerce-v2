@@ -47,7 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, var(--Rosedragée), var(--Rosepoudré));
+            background-image: url("images/font.jpg");
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
             margin: 0;
             padding: 0;
             min-height: 100vh;

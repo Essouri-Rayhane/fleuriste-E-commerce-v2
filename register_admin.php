@@ -41,7 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 body {
-  background: linear-gradient(145deg, #f9e7e9, #f1f1f1);
+  background-image: url("images/font.jpg");
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;

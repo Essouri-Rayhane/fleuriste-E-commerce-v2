@@ -38,7 +38,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(145deg, #f9e7e9, #f1f1f1);
+  background-image: url("images/client.jpg");
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   align-items: center;

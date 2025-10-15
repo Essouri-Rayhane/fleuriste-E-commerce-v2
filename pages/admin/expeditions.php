@@ -83,7 +83,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise));
   background-size: 400% 400%;
-  animation: gradientFlow 10s ease infinite;
+ 
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -371,9 +371,12 @@ button:hover {
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, var(--Rosepoudré), var(--Rosedragée), var(--Roseframboise));
-      background-size: 400% 400%;
-      animation: gradientFlow 10s ease infinite;
+      background-image: url('../../images/font.jpg') ;
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 400% 400%;      background-size: 400% 400%;
+    
       min-height: 100vh;
       padding: 20px;
     }
@@ -587,7 +590,7 @@ button:hover {
         
         <li><a href="commandes.php"><i class="fa fa-shopping-cart"></i> Commandes</a></li>
         <li><a href="expeditions.php" class="active"><i class="fa fa-truck"></i> Expéditions</a></li>
-        <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li>
+        <!-- <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li> -->
         <li><a href="../../logout.php"><i class="fa fa-sign-out-alt"></i> Déconnexion</a></li>
       </ul>
     </div>

@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 
-<div class="container">
-    <h1 >Bienvenue sur </h1>
+<div class="container"> 
+  <div><h1 >Bienvenue sur </h1>
     <h2><span>Petalune </span> 🌸</h2> 
     <p><span>💐</span>Votre boutique en ligne pour toutes vos envies florales !Votre destination pour des bouquets élégants, des plantes rares et des cadeaux floraux sur-mesure <span>💐</span></p>
 
@@ -11,7 +11,8 @@
     </a>
     <a href="#" class="card" onclick="openPopup('register')">
         <i class="fas fa-user-plus"></i> Register
-    </a>
+    </a></div>
+    
     <div id="popup" class="modal">
   <div class="modal-content">
     <h2 id="popup-title">Choisissez Le Type De Compte</h2>
@@ -36,7 +37,7 @@
 <!-- SECTION about -->
 <section class="about" id="about">
 
-  <h1 class="heading"><span>About</span> Us</h1>
+  <h1 class="heading" id="aboutus"><span>About</span> Us</h1>
 
   <div class="row">
 
@@ -55,37 +56,36 @@
                     <p><i class="fas fa-check"></i> Équipe de fleuristes passionnés</p>
                 </div>
                 <p class="highlight">Nos bouquets, préparés avec passion, sont livrés avec soin pour faire naître l'émotion dès le premier regard.</p>
-                <a href="pages/a-propos.php" class="btn btn-primary">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                <a href="a_propos.php" class="card-cmd">En savoir plus <i class="fas fa-arrow-right"></i></a>
 
     </div>
-
   </div>
 
 </section>
 <!-- SECTION CATEGORIES -->
 <section class="container2">
-<h1 class="heading"><span>Nos</span> catégories</h1>
+<h1 class="heading" id="categories"><span>Nos</span> catégories</h1>
   
   
   <div class="menu-grid">
-    <a href="pages/produits.php" class="card">
+    <a href="login_client.php" class="card">
       <img src="images/fleurs.jpg" alt="Fleurs" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
       <p>Fleurs fraîches</p>
       
     </a>
-    <a href="pages/produits.php" class="card">
+    <a href="login_client.php" class="card">
       <img src="images/plantes.jpg" alt="Plantes" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
       <p>Plantes d’intérieur</p>
     </a>
-    <a href="pages/produits.php" class="card">
+    <a href="login_client.php" class="card">
       <img src="images/coffrets.jpg" alt="Coffrets" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
       <p>Coffrets cadeaux</p>
     </a>
-    <a href="pages/produits.php" class="card">
+    <a href="login_client.php" class="card">
       <img src="images/bouquet.jpg" alt="Bouquets" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
       <p>Bouquets personnalisés</p>
     </a>
-    <a href="pages/produits.php" class="card">
+    <a href="login_client.php" class="card">
       <img src="images/fleur-sechée.jpg" alt="fleur-sechée" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
       <p>Fleurs Séchées</p>
       
@@ -99,7 +99,7 @@
 <section class="cta-section">
   <h2>Vous avez une occasion spéciale ?</h2>
   <p>Commandez un bouquet personnalisé ou contactez-nous pour plus de détails 💌</p>
-  <a href="pages/client/produits.php" class="card-cmd">Passer une commande <i class="fas fa-shopping-basket"></i></a>
+  <a href="login_client.php" class="card-cmd">Passer une commande <i class="fas fa-shopping-basket"></i></a>
   <a href="#contact" class="card-cmd">Contactez-nous <i class="fas fa-envelope"></i></a>
 </section>
 
@@ -149,4 +149,4 @@ function redirectTo(role) {
 
 </script>
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'includes/footer.php';?>

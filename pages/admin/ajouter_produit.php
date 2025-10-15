@@ -99,9 +99,12 @@ html {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise));
+  background-image: url('../../images/font.jpg') ;
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 400% 400%;
-  animation: gradientFlow 10s ease infinite;
+  
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -377,13 +380,11 @@ button:hover {
 
     <li><a href="produits.php"><i class="fa fa-box"></i> Produits</a></li>
 
-   
-
     <li><a href="commandes.php"><i class="fa fa-shopping-cart"></i> Commandes</a></li>
 
     <li><a href="expeditions.php"><i class="fa fa-truck"></i> Expéditions</a></li>
 
-    <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li>
+    <!-- <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li> -->
 
     <li><a href="../../logout.php"><i class="fa fa-sign-out-alt"></i> Déconnexion</a></li>
   </ul>

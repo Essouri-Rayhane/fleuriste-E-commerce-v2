@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['delete'])) {
     /* ========== RESET ========== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise)); background-size: 400% 400%; animation: gradientFlow 10s ease infinite; min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
+    body { font-family: 'Segoe UI', sans-serif; min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
 
     /* ========== Animations ========== */
     @keyframes gradientFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -104,9 +104,13 @@ html {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise));
+  font-family: 'Segoe UI', sans-serif;  
+      background-image: url('../../images/font.jpg') ;
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 400% 400%;
-  animation: gradientFlow 10s ease infinite;
+ 
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -383,7 +387,7 @@ button:hover {
         
         <li><a href="commandes.php"><i class="fa fa-shopping-cart"></i> Commandes</a></li>
         <li><a href="expeditions.php"><i class="fa fa-truck"></i> Expéditions</a></li>
-        <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li>
+        <!-- <li><a href="rapports.php"><i class="fa fa-chart-bar"></i> Rapports</a></li> -->
         <li><a href="../../logout.php"><i class="fa fa-sign-out-alt"></i> Déconnexion</a></li>
       </ul>
     </div>

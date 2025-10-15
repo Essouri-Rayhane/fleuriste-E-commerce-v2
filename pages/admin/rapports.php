@@ -193,9 +193,12 @@ html {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise));
+  background-image: url('../../images/font.jpg') ;
+  background-size: cover;        /* ou contain selon le besoin */
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: 400% 400%;
-  animation: gradientFlow 10s ease infinite;
+ 
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;

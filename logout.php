@@ -11,13 +11,41 @@ session_destroy();
     <title>Déconnexion</title>
     <meta http-equiv="refresh" content="5;url=login_client.php">
     <style>
-        :root {
+               /* Variables de couleur */
+               :root {
+            --cream: #f6f2eb;
+            --light-green: #d9e4d1;
+            --medium-green: #6d9773;
+            --dark-green: #3a5a40;
+            --text-dark: #2d2d2d;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --transition: 0.3s ease;
+            --rose-light: #FDE2E4;
+        --rose: #f9c5d1;
+        --rose-medium: #f7a1b0;
+        --rose-dark: #c97b8d;
+        --rose-deep: #8b4d5d;
+      
+        --rose-gold: #b76e79;
+        --blush: #f4acb7;
+        --champagne: #fcd5ce;
+
             --Rosepoudré: #f6f2eb;
-            --Rosedragée: #d9e4d1;
-            --Roseframboise: #6d9773;
-            --Rosefuchsia: #3a5a40;
+      --Rosedragée: #d9e4d1;
+      --Roseframboise: #6d9773;
+      --Rosefuchsia: #3a5a40;
+    
+
+   /* Autres */
+  --text-dark: #2d2d2d;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --radius: 16px;
+  --transition: 0.3s ease;
+  --h2-size: clamp(2rem, 5vw, 3rem);
         }
 
+        /* Reset */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -25,7 +53,25 @@ session_destroy();
         }
 
         body {
-            background: linear-gradient(135deg, var(--Rosedragée), var(--Rosepoudré));
+            font-family: 'Segoe UI', sans-serif;
+          
+          
+            color: var(--text-dark);
+            display: flex;
+          
+
+        }
+        @keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+        body {
+            background: linear-gradient(135deg, var(--rose-light), var(--Rosedragée), var(--Roseframboise));
+            background-attachment: fixed;
+             animation: gradientFlow 8s ease infinite;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             height: 100vh;
             display: flex;
@@ -112,6 +158,7 @@ session_destroy();
                 transform: translateY(0);
             }
         }
+        
     </style>
 </head>
 <body>
@@ -136,6 +183,22 @@ session_destroy();
                 countdownElement.textContent = count;
             }
         }, 1000);
+
+        const container = document.querySelector('.petals-container');
+
+function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+    container.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+setInterval(createPetal, 500); // une pétale toutes les 0.5 secondes
     </script>
 </body>
 </html>
